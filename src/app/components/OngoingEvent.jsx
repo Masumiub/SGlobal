@@ -37,8 +37,8 @@ export default async function OngoingEvents() {
 
   return (
     <div className="mt-20">
-      <h2 className="text-5xl font-bold mb-6 text-center text-blue-800">Ongoing Events</h2>
-      <div className="w-full md:w-7/12 mx-auto">
+      <h2 className="text-5xl font-bold mb-6 text-center ">Ongoing Events</h2>
+      <div className="w-full md:w-7/12 mx-auto ">
       <p className="text-center">Our core belief is to ensure that our students receive comprehensive education and guidance at every stage of their study abroad journey.</p>
       </div>
 

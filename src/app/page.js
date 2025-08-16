@@ -22,7 +22,7 @@ export default function Home() {
 
       </div>
 
-      <div className="bg-sky-50 my-30">
+      <div className="bg-sky-200 my-30">
         <div className="w-full p-3 md:w-10/12 mx-auto">
               <OngoingEvent></OngoingEvent>
         </div>

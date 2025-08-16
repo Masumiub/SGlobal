@@ -4,6 +4,8 @@ import React from "react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { FaEarthAmericas } from "react-icons/fa6";
+
 
 export default function Navbar() {
   const { data: session, status } = useSession();
@@ -46,7 +48,7 @@ export default function Navbar() {
               <li>
                 <Link href='/'>Home</Link>
               </li>
-            <li>
+              <li>
                 <Link href='/events'>Events</Link>
               </li>
               <li>
@@ -54,20 +56,25 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
+
+          <div className="ml-2">
+            <FaEarthAmericas />
+          </div>
+
           <a className="px-3 text-xl font-bold">Shabuj Global</a>
         </div>
 
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-              <li>
-                <Link href='/'>Home</Link>
-              </li>
             <li>
-                <Link href='/events'>Events</Link>
-              </li>
-              <li>
-                <Link href='/contact'>Contact</Link>
-              </li>
+              <Link href='/'>Home</Link>
+            </li>
+            <li>
+              <Link href='/events'>Events</Link>
+            </li>
+            <li>
+              <Link href='/contact'>Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -79,9 +86,11 @@ export default function Navbar() {
               <span className="hidden md:inline">
                 Hi, {session.user.name || session.user.email}
               </span>
-              <Link href='/admin' className="btn  rounded-full">
-                Dashboard
-              </Link>
+              {session.user.role === "admin" && (
+                <Link href="/admin" className="btn rounded-full">
+                  Dashboard
+                </Link>
+              )}
 
               <button onClick={handleLogout} className="btn btn-outline rounded-full">
                 Logout

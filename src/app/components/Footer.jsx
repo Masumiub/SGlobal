@@ -1,6 +1,7 @@
 'use client';
 import React from 'react'
 import { usePathname } from 'next/navigation';
+import { FaEarthAmericas } from 'react-icons/fa6';
 
 
 export default function Footer() {
@@ -14,8 +15,11 @@ export default function Footer() {
     return (
         <div>
 
-            <footer className="footer sm:footer-horizontal bg-sky-200 text-base-content px-10 py-40">
+            <footer className="footer sm:footer-horizontal bg-sky-200 text-blue-800  px-10 py-40">
                 <aside>
+                    <div className="">
+                        <FaEarthAmericas size={20}/>
+                    </div>
                     <h1 className='font-bold text-2xl'>Shabuj Global</h1>
                     <p>
                         Providing reliable tech since 1992

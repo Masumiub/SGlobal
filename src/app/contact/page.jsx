@@ -12,7 +12,7 @@ export default function ContactPage() {
             <div className="max-w-7xl mx-auto px-4 py-20">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-5xl font-bold text-blue-800">Contact Us</h1>
+                    <h1 className="text-5xl font-bold ">Contact Us</h1>
                     <p className=" mt-2">
                         We’d love to hear from you. Get in touch with us anytime!
                     </p>
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 {/* Form + Image */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     {/* Contact Form */}
-                    <form className="space-y-4 bg-gray-50 p-6 rounded-2xl shadow">
+                    <form className="space-y-4 bg-base-100 p-6 rounded-2xl shadow">
                         <div>
                             <label className="block text-sm font-medium">Name</label>
                             <input

@@ -44,8 +44,8 @@ export default function AdminLayout({ children }) {
           {links.map(link => (
                 <Link
                   href={link.href} key={link.href}
-                  className={`flex items-center gap-3 px-2 py-2 rounded hover:bg-gray-200 ${
-                    pathname === link.href ? 'bg-gray-200 font-semibold' : ''
+                  className={`flex items-center gap-3 px-2 py-2 rounded hover:bg-base-200 ${
+                    pathname === link.href ? 'bg-base-200 font-semibold' : ''
                   }`}
                 >
               {link.icon}
@@ -57,17 +57,17 @@ export default function AdminLayout({ children }) {
 
       {/* Mobile Navbar */}
       <div className="md:hidden w-full">
-        <div className="flex items-center justify-between bg-white p-4 shadow">
+        <div className="flex items-center justify-between bg-base-100 p-4 shadow">
           <div className="font-bold text-xl">Admin Panel</div>
           <button
-            className="p-2 rounded bg-gray-200"
+            className="p-2 rounded bg-base-200"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
             ☰
           </button>
         </div>
         {sidebarOpen && (
-          <nav className="bg-white p-4 space-y-2 shadow">
+          <nav className="bg-base-100 p-4 space-y-2 shadow">
             {links.map(link => (
               <Link
                 key={link.href}

@@ -6,6 +6,38 @@ import OngoingEvents from "../components/OngoingEvent";
 import UpcomingEvents from "../components/UpcomingEvents";
 
 
+export const metadata = {
+  title: "Events - Shabuj Global",
+  description: "Explore all ongoing and upcoming events organized by Shabuj Global for students planning to study abroad.",
+  keywords: "Shabuj Global, study abroad, events, student programs, workshops, seminars",
+  authors: [{ name: "Shabuj Global", url: "https://yourwebsite.com" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Events - Shabuj Global",
+    description: "Stay updated with all ongoing and upcoming events for students planning to study abroad.",
+    url: "https://yourwebsite.com/events",
+    siteName: "Shabuj Global",
+    images: [
+      {
+        url: "https://yourwebsite.com/og-events.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Shabuj Global Events",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Events - Shabuj Global",
+    description: "Stay updated with all ongoing and upcoming events for students planning to study abroad.",
+    site: "@YourTwitterHandle",
+    creator: "@YourTwitterHandle",
+    images: ["https://yourwebsite.com/og-events.jpg"],
+  },
+};
+
 export default async function EventsPage() {
   //Fetch events from MongoDB
   const client = await clientPromise;
@@ -22,7 +54,7 @@ export default async function EventsPage() {
       <UpcomingEvents></UpcomingEvents>
 
 
-      <h2 className="text-5xl font-bold mb-6 text-center text-blue-800">All Events</h2>
+      <h2 className="text-5xl font-bold mb-6 text-center ">All Events</h2>
       <div className="w-full md:w-7/12 mx-auto">
         <p className="text-center">Our core belief is to ensure that our students receive comprehensive education and guidance at every stage of their study abroad journey.</p>
       </div>
