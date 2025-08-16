@@ -5,7 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 
 
-export const revalidate = 3600; // ISR: revalidate every 60 seconds
+export const revalidate = 60; // ISR: revalidate every 60 seconds
 
 // Pre-generate all event pages at build time
 export async function generateStaticParams() {

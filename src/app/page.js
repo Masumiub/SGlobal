@@ -6,6 +6,7 @@ import About from "./components/About";
 import Features from "./components/Features";
 import UpcomingEventsHome from "./components/UpcomingEventsHome";
 import Subscribe from "./components/Subscribe";
+import Testimonials from "./components/Testimonials";
 
 
 export default function Home() {
@@ -37,6 +38,8 @@ export default function Home() {
         <PastEvents></PastEvents>
 
         <Features></Features>
+
+        <Testimonials></Testimonials>
 
         <Subscribe></Subscribe>
 

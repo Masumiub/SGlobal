@@ -5,6 +5,8 @@ import EventCard from "../components/EventCard";
 import OngoingEvents from "../components/OngoingEvent";
 import UpcomingEvents from "../components/UpcomingEvents";
 
+export const revalidate = 60;
+
 
 export const metadata = {
   title: "Events - Shabuj Global",

@@ -1,13 +1,9 @@
-
-
 import clientPromise from "../lib/db";
 import { categorizeEvent } from "../lib/categorizeEvent";
 import Link from "next/link";
 import NoEvents from "./NoEvents";
 import { FaCalendarAlt } from "react-icons/fa";
 import EventCard from "./EventCard";
-
-
 
 
 export const revalidate = 60;

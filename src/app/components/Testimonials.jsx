@@ -1,6 +1,7 @@
+'use client';
+
 import React from 'react'
 
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -123,8 +124,8 @@ const reviews2nd = [
 
 export default function Testimonials() {
     return (
-        <div className='overflow-x-hidden'>
-            <div className='text-center mt-20'>
+        <div className='overflow-x-hidden mb-30'>
+            <div className='text-center mb-20'>
                 <h2 className='text-5xl font-semibold'>Testimonials</h2>
                 <p className='mt-2'>See what our community says about Insurance Ease.</p>
             </div>
