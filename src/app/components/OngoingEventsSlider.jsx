@@ -38,11 +38,21 @@ export default function OngoingEventsSlider({ events }) {
 
     const EventCard = ({ event }) => (
         <div className="bg-gradient-to-b from-blue-600 to-sky-500 rounded-2xl overflow-hidden transition-transform duration-300 transform hover:scale-101 fade-in flex flex-col md:flex-row text-white">
-            <div className="md:w-1/2 h-64 md:h-auto">
-                <Image src={event.bannerURL} alt={event.title} fill className="object-cover w-full h-full" />
+            <div className="w-full  md:w-1/2 flex mx-auto">
+                <Image src={event.bannerURL} alt={event.title} className="object-cover w-full" width='250' height='250' />
             </div>
-            <div className="p-6 flex flex-col justify-between md:w-1/2">
+            <div className="p-6 flex flex-col justify-between w-full md:w-1/2">
                 <div>
+
+                    <div className="bg-white flex gap-2 items-center w-33 rounded-full shadow-2xl pl-2 mb-4 py-1">
+                        <span className="relative flex h-4 w-4">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-4 w-4 bg-red-600"></span>
+                        </span>
+                        <p className="text-black text-sm">Oning Events</p>
+                    </div>
+
+
                     <h3 className="text-2xl font-semibold mb-4">{event.title}</h3>
 
                     <p className="text-sm mb-1 flex items-center gap-2">
