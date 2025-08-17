@@ -17,7 +17,27 @@ export default function AdminHomePage() {
     async function fetchData() {
       const res = await fetch("/api/admin/stats");
       const data = await res.json();
-      setStats(data);
+
+      const events = data.events || [];
+      const now = new Date();
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      // Helper function
+      const categorizeEvent = (event, tz) => {
+        const eventDate = new Date(event.startTime);
+        const now = new Date();
+        return eventDate >= now ? "upcoming" : "past";
+      };
+
+      const upcomingEvents = events.filter((e) => categorizeEvent(e, userTimeZone) === "upcoming").length;
+      const pastEvents = events.filter((e) => categorizeEvent(e, userTimeZone) === "past").length;
+
+      setStats({
+        totalEvents: events.length,
+        upcomingEvents,
+        pastEvents,
+        totalUsers: data.totalUsers || 0,
+      });
     }
     fetchData();
   }, []);
@@ -27,6 +47,9 @@ export default function AdminHomePage() {
     { name: "Past Events", value: stats.pastEvents },
     { name: "Total Events", value: stats.totalEvents },
   ];
+
+//  console.log(stats.upcomingEvents, stats.pastEvents)
+
 
   return (
     <div className="">

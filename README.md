@@ -20,7 +20,7 @@ The project is designed to be **scalable, responsive, and optimized for SEO**, m
 - 🔐 **Admin Dashboard** with sidebar navigation for desktop & mobile-friendly navbar  
 - 📝 **Event Creation & Management** for admins  
 - 📊 **Interactive Charts** for event analytics (Recharts)  
-- ⚡ **Server-Side Rendering (SSR)** with Next.js App Router  
+- ⚡ **Server-Side Rendering (SSR)**, ISR, CSR with Next.js App Router  
 - 📦 MongoDB integration for event data storage  
 - 🔍 SEO Optimized using `next/head` & metadata API  
 
