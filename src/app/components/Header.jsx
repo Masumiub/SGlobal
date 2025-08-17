@@ -36,7 +36,7 @@ export default function Header() {
                 <div className='max-w-3xl mb-10 mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-5 items-center justify-center'>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-800'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
                             <div>
 
                                 <LiaUniversitySolid size={35} />
@@ -48,7 +48,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-800'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
                             <div>
                                 <LuNotebook size={35} />
                             </div>
@@ -59,7 +59,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-800'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
                             <div>
                                 <HiOutlineDesktopComputer size={35} />
                             </div>

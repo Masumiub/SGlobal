@@ -78,7 +78,7 @@ export default function Navbar() {
               <div className="ml-2">
                 <FaEarthAmericas />
               </div>
-              <a className="px-3 text-xl font-bold">Shabuj Global</a>
+              <p className="px-3 text-xl font-bold">Shabuj Global Education</p>
             </div>
 
           </Link>

@@ -1,3 +1,4 @@
+import EventRegistration from "@/app/components/EventRegistration";
 import Features from "@/app/components/Features";
 import PastEvents from "@/app/components/PastEvents";
 import clientPromise from "@/app/lib/db";
@@ -76,6 +77,25 @@ export default async function EventDetailsPage({ params }) {
 
   const event = await db.collection("events").findOne({ _id: new ObjectId(id) });
 
+
+
+    const safeEvent = {
+    _id: event._id.toString(),
+    title: event.title || "",
+    location: event.location || "",
+    description: event.description || "",
+    bannerURL: event.bannerURL || "",
+    whyAttend: event.whyAttend || [],
+    topPartnerUniversities: event.topPartnerUniversities || [],
+    contactNumber: event.contactNumber || "",
+    date: event.date ? new Date(event.date).toISOString() : null,
+    startTime: event.startTime ? new Date(event.startTime).toISOString() : null,
+    endTime: event.endTime ? new Date(event.endTime).toISOString() : null,
+    createdAt: event.createdAt ? new Date(event.createdAt).toISOString() : null,
+  };
+
+
+
   if (!event) {
     return <div className="text-center py-20">Event not found.</div>;
   }
@@ -152,7 +172,10 @@ export default async function EventDetailsPage({ params }) {
 
 
         </div>
-
+        
+        <div>
+          <EventRegistration safeEvent={safeEvent}></EventRegistration>
+        </div>
         <div className="mt-30 mb-[-180px]">
           <Features></Features>
         </div>

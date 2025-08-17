@@ -2,7 +2,9 @@
 import React from 'react'
 import { usePathname } from 'next/navigation';
 import { FaEarthAmericas } from 'react-icons/fa6';
-
+import { IoIosCall } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 
 export default function Footer() {
     const pathname = usePathname();
@@ -15,22 +17,40 @@ export default function Footer() {
     return (
         <div>
 
-            <footer className="footer sm:footer-horizontal bg-sky-200 text-blue-800  px-10 py-40">
+            <footer className="footer sm:footer-horizontal bg-blue-800 text-white  px-10 py-40">
                 <aside>
                     <div className="">
-                        <FaEarthAmericas size={20}/>
+                        <FaEarthAmericas size={20} />
                     </div>
-                    <h1 className='font-bold text-2xl'>Shabuj Global</h1>
-                    <p>
-                        Providing reliable tech since 1992
+                    <h1 className='font-bold text-2xl'>Shabuj Global Education</h1>
+                    <p className='mb-3'>
+                        We take pride in our ability to help students achieve their academic goals and succeed in life. <br />
+                        Get complete guidance in your study abroad journey from start to finish.
                     </p>
+
+                    <div className='flex items-center gap-2'>
+                    <div className='p-3 bg-blue-100 rounded-lg'><IoIosCall className='text-black'/> </div>
+                    <p>+88 000 1111 2233 </p>
+                    </div>
+
+                    <div className='flex items-center gap-2 mt-3'>
+                    <div className='p-3 bg-blue-100 rounded-lg'><MdEmail className='text-black'/></div>
+                    <p>tourNest@contact.com</p>
+                    </div>
+
+                    <div className='flex items-center gap-2 mt-3'>
+                    <div className='p-3 bg-blue-100 rounded-lg'><FaLocationDot className='text-black'/></div>
+                    <p>1216/1/A, Street No - 98, Gulshan <br />
+                    Dhaka, Bangladesh</p>
+                    </div>
+
                 </aside>
                 <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <h6 className="footer-title">General</h6>
+                    <a className="link link-hover">Home</a>
+                    <a className="link link-hover">Events</a>
+                    <a className="link link-hover">Contact</a>
+                    <a className="link link-hover">Tests</a>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Company</h6>

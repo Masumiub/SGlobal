@@ -1,13 +1,18 @@
 import clientPromise from "../lib/db";
 import { categorizeEvent } from "../lib/categorizeEvent";
 import EventCard from "./EventCard";
+import Link from "next/link";
 
 
 export const revalidate = 60;
 
-export default async function PastEvents() {
+const EVENTS_PER_PAGE = 6;
+
+export default async function PastEvents({ searchParams }) {
   const client = await clientPromise;
   const db = client.db("SGlobalDB");
+
+  const page = parseInt(searchParams?.page || "1", 10);
 
   const events = await db.collection("events").find({}).sort({ startTime: -1 }).toArray();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -15,6 +20,15 @@ export default async function PastEvents() {
   const pastEvents = events.filter(event => categorizeEvent(event, userTimeZone) === "past");
 
   if (!pastEvents.length) return <div className="text-center py-10 text-gray-500">No past events.</div>;
+
+
+  const totalEvents = pastEvents.length;
+  const totalPages = Math.ceil(totalEvents / EVENTS_PER_PAGE);
+
+  const startIdx = (page - 1) * EVENTS_PER_PAGE;
+  const endIdx = startIdx + EVENTS_PER_PAGE;
+  const currentEvents = pastEvents.slice(startIdx, endIdx);
+
 
   return (
     <div className="my-40">
@@ -27,26 +41,45 @@ export default async function PastEvents() {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10">
 
-        {pastEvents.map(event => (
+        {currentEvents.map(event => (
           <EventCard key={event._id.toString()} event={event} showViewDetailsButton={true} />
         ))}
 
-        {/* {pastEvents.map(event => (
-          <div key={event._id.toString()} className="rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl fade-in">
-            <div className="relative h-48 w-full">
-              <img src={event.bannerURL} alt={event.title} className="object-cover w-full h-full" />
-            </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-              <p className="text-sm text-gray-600 mb-1">
-                {new Date(event.startTime).toLocaleDateString()} | {new Date(event.startTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })} - {new Date(event.endTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-              </p>
-              <p className="text-gray-700 line-clamp-3">{event.description}</p>
-            </div>
-          </div>
-        ))} */}
       </div>
 
+<div className="flex mx-auto justify-center mt-10 gap-1">
+        {/* Prev Button */}
+        <Link
+          href={`?page=${page > 1 ? page - 1 : 1}`}
+          className={`join-item btn ${page === 1 ? "btn-disabled" : ""}`}
+        >
+          Previous
+        </Link>
+
+        {/* Page Numbers */}
+        <div className="join">
+          {Array.from({ length: totalPages }).map((_, idx) => {
+            const pageNum = idx + 1;
+            return (
+              <Link
+                key={pageNum}
+                href={`?page=${pageNum}`}
+                className={`join-item btn ${page === pageNum ? "btn-active" : ""}`}
+              >
+                {pageNum}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Next Button */}
+        <Link
+          href={`?page=${page < totalPages ? page + 1 : totalPages}`}
+          className={`join-item btn ${page === totalPages ? "btn-disabled" : ""}`}
+        >
+          Next
+        </Link>
+      </div>
 
     </div>
   );

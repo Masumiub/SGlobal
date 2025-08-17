@@ -25,7 +25,7 @@ export default function Features() {
     <section id="features" className="pb-40">
       <div className="max-w-7xl mx-auto px-6 ">
         <h2 className="text-4xl md:text-5xl font-bold mb-12  text-center">
-          Our Services
+          Why Choose Us?
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3">

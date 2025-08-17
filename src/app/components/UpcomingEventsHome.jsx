@@ -23,7 +23,7 @@ export default async function UpcomingEventsHome() {
 
   //const limitedEvents = upcomingEvents.slice(0, 8);
 
-  const limitedEvents = upcomingEvents.slice(0, 8).map(event => ({
+  const limitedEvents = upcomingEvents.map(event => ({
     ...event,
     _id: event._id.toString(), // ObjectId → string
     startTime: event.startTime ? new Date(event.startTime).toISOString() : null,

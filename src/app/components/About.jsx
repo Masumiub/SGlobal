@@ -13,20 +13,21 @@ export default function About() {
         <Fade cascade>
           <div className='flex flex-col md:flex-row-reverse gap-10 items-center'>
             <div className='w-full md:w-1/2'>
+              <Fade cascade>
+                <div className="bg-white text-black p-2 rounded-full shadow-lg  mb-8 flex flex-row items-center w-40">
+                  <PiStudentFill />
+                  <p className="text-xs">10+ Years Experiences</p>
+                </div>
 
-              <div className="bg-white text-black p-2 rounded-full shadow-lg  mb-8 flex flex-row items-center w-40">
-                <PiStudentFill />
-                <p className="text-xs">10+ Years Experiences</p>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
-                Your Complete Study Abroad Partner
-              </h2>
-              <p className="max-w-3xl mx-auto ">
-                Get complete guidance in your study abroad journey from start to finish.
-                Shabuj Global Education helps you with Course & University Selection, Interview and Test Preparation,
-                Visa Application and Admission and more—so you can join your dream university with ease!
-              </p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
+                  Your Complete Study Abroad Partner
+                </h2>
+                <p className="max-w-3xl mx-auto ">
+                  Get complete guidance in your study abroad journey from start to finish.
+                  Shabuj Global Education helps you with Course & University Selection, Interview and Test Preparation,
+                  Visa Application and Admission and more—so you can join your dream university with ease!
+                </p>
+              </Fade>
             </div>
 
             <div className='w-full md:w-1/2'>
