@@ -39,7 +39,7 @@ export default function OngoingEventsSlider({ events }) {
     const EventCard = ({ event }) => (
         <div className="bg-gradient-to-b from-blue-600 to-sky-500 rounded-2xl overflow-hidden transition-transform duration-300 transform hover:scale-101 fade-in flex flex-col md:flex-row text-white">
             <div className="w-full  md:w-1/2 flex mx-auto">
-                <Image src={event.bannerURL} alt={event.title} className="object-cover w-full" width='250' height='250' />
+                <Image src={event.bannerURL} alt={event.title} className="object-cover w-full" width='350' height='350' />
             </div>
             <div className="p-6 flex flex-col justify-between w-full md:w-1/2">
                 <div>

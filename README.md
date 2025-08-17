@@ -2,6 +2,10 @@
 
 **Live Demo:** [https://s-global.vercel.app/](https://s-global.vercel.app/)
 
+## Admin Credientials
+- Email: musfiquemasum@gmail.com
+- Pass: samsung77
+
 
 ## 📌 Project Description
 S-Global is a modern **event management platform** built with **Next.js 15 (App Router)**.  
