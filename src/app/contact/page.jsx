@@ -8,7 +8,7 @@ import ImgContact from '../../../public/assets/Study abroad-pana.svg'
 
 export default function ContactPage() {
     return (
-        <div className='bg-gradient-to-b from-sky-300 to-base-100'>
+        <div className=''>
             <div className="max-w-7xl mx-auto px-4 py-20">
                 {/* Header */}
                 <div className="text-center mb-12">

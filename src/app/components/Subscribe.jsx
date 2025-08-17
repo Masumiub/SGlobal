@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import ImgSub from '../../../public/assets/Study abroad-amico.svg'
+import ImgSub from '../../../public/assets/newsletter.png'
 
 
 export default function Subscribe() {
@@ -18,7 +18,7 @@ export default function Subscribe() {
         <section className="py-40 bg-gradient-to-b from-blue-600 to-sky-400 text-white rounded-2xl mb-20">
             <div className="max-w-5xl mx-auto px-6">
 
-                <div className="flex flex-col md:flex-row gap-10 items-center">
+                <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
                     <div className="w-full md:w-1/2">
                         <h2 className="text-4xl md:text-5xl font-bold  mb-4">
                             Stay tuned for your exciting events in the future!

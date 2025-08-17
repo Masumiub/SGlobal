@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import Link from "next/link";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ export default function EventCard({ event, showViewDetailsButton = true }) {
   return (
     <div className="rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl fade-in">
       <div className="relative h-48 w-full">
-        <img src={event.bannerURL} alt={event.title} className="object-cover w-full h-full" />
+        <Image src={event.bannerURL} alt={event.title} fill className="object-cover w-full h-full" />
       </div>
 
       <div className="p-4 flex flex-col justify-between h-55">

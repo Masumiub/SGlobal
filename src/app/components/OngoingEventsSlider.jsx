@@ -7,6 +7,7 @@ import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdLocationOn } from "react-icons/md";
+import Image from "next/image";
 
 export default function OngoingEventsSlider({ events }) {
     const [clientEvents, setClientEvents] = useState([]);
@@ -38,7 +39,7 @@ export default function OngoingEventsSlider({ events }) {
     const EventCard = ({ event }) => (
         <div className="bg-gradient-to-b from-blue-600 to-sky-500 rounded-2xl overflow-hidden transition-transform duration-300 transform hover:scale-101 fade-in flex flex-col md:flex-row text-white">
             <div className="md:w-1/2 h-64 md:h-auto">
-                <img src={event.bannerURL} alt={event.title} className="object-cover w-full h-full" />
+                <Image src={event.bannerURL} alt={event.title} fill className="object-cover w-full h-full" />
             </div>
             <div className="p-6 flex flex-col justify-between md:w-1/2">
                 <div>

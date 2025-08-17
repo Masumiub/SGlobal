@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
 
 
 const reviews = [
@@ -151,7 +152,7 @@ export default function Testimonials() {
                     <SwiperSlide key={idx}>
                         <div className="border border-base-300 px-6 flex gap-4 rounded-2xl shadow-sm items-center justify-center h-40">
                             <div>
-                                <img src={review.img} alt="user" className="w-13 h-13 rounded-full object-cover" />
+                                <Image src={review.img} alt="user" className="w-13 h-13 rounded-full object-cover" width='13' height='13'/>
                             </div>
                             <div className="flex-1 overflow-hidden">
                                 <h2 className="font-bold">{review.name}</h2>
@@ -185,7 +186,7 @@ export default function Testimonials() {
                     <SwiperSlide key={idx}>
                         <div className="border border-base-300 px-6 flex gap-4 rounded-2xl shadow-sm items-center justify-center h-40">
                             <div>
-                                <img src={review.img} alt="user" className="w-13 h-13 rounded-full object-cover" />
+                                <Image src={review.img} alt="user" className="w-13 h-13 rounded-full object-cover" width='13' height='13'/>
                             </div>
                             <div className="flex-1 overflow-hidden">
                                 <h2 className="font-bold">{review.name}</h2>

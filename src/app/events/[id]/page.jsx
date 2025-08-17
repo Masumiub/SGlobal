@@ -1,3 +1,5 @@
+import Features from "@/app/components/Features";
+import PastEvents from "@/app/components/PastEvents";
 import clientPromise from "@/app/lib/db";
 import { ObjectId } from "mongodb";
 import Image from "next/image";
@@ -79,14 +81,14 @@ export default async function EventDetailsPage({ params }) {
   }
 
   return (
-    <div className="bg-gradient-to-b from-sky-300 to-base-100">
+    <div className="">
       <div className="max-w-6xl mx-auto px-4 pt-20 pb-30">
 
         <div className="flex flex-col md:flex-row gap-10">
 
           <div className="w-full md:w-1/2">
             {/* Title & Basic Info */}
-            <h1 className="text-4xl font-bold mt-6">{event.title}</h1>
+            <h1 className="text-5xl font-bold mt-6">{event.title}</h1>
 
             <p className="my-2 flex items-center gap-2">
               <FaCalendarAlt className="text-sky-500" />
@@ -94,7 +96,7 @@ export default async function EventDetailsPage({ params }) {
             </p>
 
             <div className="my-2 flex items-center gap-2">
-              <MdLocationOn className="text-sky-500"/>
+              <MdLocationOn className="text-sky-500" />
               <p className="">{event.location}</p>
             </div>
 
@@ -106,7 +108,7 @@ export default async function EventDetailsPage({ params }) {
             {event.whyAttend?.length > 0 && (
               <div className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Why Attend?</h2>
-                <ul className="list-disc ml-5 text-gray-700">
+                <ul className="list-disc ml-5 ">
                   {event.whyAttend.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -118,7 +120,7 @@ export default async function EventDetailsPage({ params }) {
             {event.topPartnerUniversities?.length > 0 && (
               <div className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Top Partner Universities</h2>
-                <ul className="list-disc ml-5 text-gray-700">
+                <ul className="list-disc ml-5">
                   {event.topPartnerUniversities.map((uni, idx) => (
                     <li key={idx}>{uni}</li>
                   ))}
@@ -128,7 +130,7 @@ export default async function EventDetailsPage({ params }) {
 
             {/* Contact */}
             {event.contactNumber && (
-              <p className="text-gray-700">
+              <p className="">
                 <strong>Contact:</strong> {event.contactNumber}
               </p>
             )}
@@ -138,21 +140,33 @@ export default async function EventDetailsPage({ params }) {
           <div className="w-full md:w-1/2">
             {/* Banner */}
             <div className="relative w-full h-64 md:h-96">
-              <img className="rounded-2xl shadow-2xl"
+              <Image
                 src={event.bannerURL}
                 alt={event.title}
+                fill
+                className="rounded-2xl shadow-2xl object-cover"
+                priority={true}
               />
             </div>
           </div>
 
 
         </div>
+
+        <div className="mt-30 mb-[-180px]">
+          <Features></Features>
+        </div>
+
+        <div className="mb-[-80px]">
+        <PastEvents></PastEvents>
+        </div>
+
       </div>
     </div>
   );
 }
 
-
+//bg-gradient-to-b from-blue-400 to-base-100
 //          fill
 //          className="object-cover rounded-lg"
 //          priority

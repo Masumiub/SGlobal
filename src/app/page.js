@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
 
-      <div className="w-full p-3 mx-auto bg-gradient-to-b from-sky-300 to-base-100">
+      <div className="w-full p-3 mx-auto ">
         <Header />
       </div>
 
@@ -23,7 +23,7 @@ export default function Home() {
 
       </div>
 
-      <div className="bg-sky-200 my-30">
+      <div className="bg-base-300 mt-30">
         <div className="w-full p-3 md:w-10/12 mx-auto">
               <OngoingEvent></OngoingEvent>
         </div>
@@ -49,7 +49,7 @@ export default function Home() {
   );
 }
 
-
+//bg-gradient-to-b from-blue-400 to-base-100
 {/* <div
   className="w-full relative bg-[radial-gradient(125%_125%_at_50%_90%,_#fff_40%,_#63cbf1_100%)]"
 >

@@ -1,15 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEarthAmericas } from "react-icons/fa6";
-
+import { CgDarkMode } from "react-icons/cg";
 
 export default function Navbar() {
   const { data: session, status } = useSession();
+  const [theme, setTheme] = useState('light');
+
   const router = useRouter();
+
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
 
   const handleLogout = async () => {
     await signOut({ redirect: false });
@@ -18,7 +34,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="navbar bg-blue-800 text-white shadow-sm">
+      <div className="navbar bg-blue-800 text-white shadow-sm py-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -57,11 +73,16 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <div className="ml-2">
-            <FaEarthAmericas />
-          </div>
+          <Link href='/'>
+            <div className="flex items-center">
+              <div className="ml-2">
+                <FaEarthAmericas />
+              </div>
+              <a className="px-3 text-xl font-bold">Shabuj Global</a>
+            </div>
 
-          <a className="px-3 text-xl font-bold">Shabuj Global</a>
+          </Link>
+
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -79,6 +100,15 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-end flex gap-2">
+
+          <div className="form-control mt-1">
+            <label className="label cursor-pointer">
+              <CgDarkMode size={25} />
+              <input type="checkbox" className="toggle theme-controller" onChange={toggleTheme} checked={theme === 'dark'} />
+            </label>
+          </div>
+
+
           {status === "loading" ? (
             <span>Loading...</span>
           ) : session ? (
