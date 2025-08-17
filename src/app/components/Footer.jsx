@@ -35,7 +35,7 @@ export default function Footer() {
 
                     <div className='flex items-center gap-2 mt-3'>
                     <div className='p-3 bg-blue-100 rounded-lg'><MdEmail className='text-black'/></div>
-                    <p>tourNest@contact.com</p>
+                    <p>sglobal@contact.com</p>
                     </div>
 
                     <div className='flex items-center gap-2 mt-3'>
