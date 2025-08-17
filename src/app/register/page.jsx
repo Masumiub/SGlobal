@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
+
 
 const registerSchema = z.object({
   name: z.string().min(2),
@@ -36,14 +39,14 @@ export default function RegisterPage() {
     <div className="p-6 max-w-sm mx-auto bg-base-100 rounded-2xl shadow my-30">
       
 
-        <h1 className="text-2xl font-bold ">Create an account</h1>
+        <h1 className="text-3xl font-bold ">Create an account</h1>
         <p>Enter your email below to create your account</p>
 
 
         <button
           onClick={() => signIn("google")}
           className=" w-full btn rounded-full mt-5"
-        >
+        ><FcGoogle />
           Sign in with Google
         </button>
 
@@ -72,7 +75,9 @@ export default function RegisterPage() {
           <button className="btn rounded-full w-full mt-5 btn-primary">Sign Up</button>
         </form>
 
-      
+        <div className="mt-5">
+          <p className="text-center">Already Have an account? <Link href='/login' className="text-blue-500">Login</Link></p>
+        </div>
     </div>
   );
 }

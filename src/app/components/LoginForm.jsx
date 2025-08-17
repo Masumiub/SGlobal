@@ -10,7 +10,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import imgLogin from '../../../public/assets/Study abroad-pana.svg'
 import Image from "next/image";
-
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginForm({ className, ...props }) {
   const router = useRouter();
@@ -74,7 +74,7 @@ export default function LoginForm({ className, ...props }) {
                 <Input id="password" name="password" type="password" className='input' required />
               </div>
 
-              <Button type="submit" className="w-full text-white" disabled={loading}>
+              <Button type="submit" className="w-full text-white bg-blue-500 rounded-full" disabled={loading}>
                 {loading ? "Logging in..." : "Login"}
               </Button>
 
@@ -84,9 +84,9 @@ export default function LoginForm({ className, ...props }) {
               <div className="grid grid-cols-1 gap-4">
 
                 {/* Google Login */}
-                <Button variant="outline" type="button" className="w-full border-base-300 border-1" onClick={handleGoogleLogin}>
+                <Button variant="outline" type="button" className="w-full border-base-300 border-1 hover:bg-blue-300" onClick={handleGoogleLogin}>
                   <span className="sr-only">Login with Google</span>
-                  G
+                  <FcGoogle />
                 </Button>
 
               </div>

@@ -1,6 +1,20 @@
 import clientPromise from "@/app/lib/db";
+import { adminAuth } from "@/app/middlewares/adminAuth";
 
 export async function GET() {
+
+
+      const auth = await adminAuth();
+    
+      if (!auth.authorized) {
+        return NextResponse.json(
+          { error: auth.message },
+          { status: 403 }
+        );
+      }
+    
+
+
     try {
         const client = await clientPromise;
         const db = client.db("SGlobalDB");
