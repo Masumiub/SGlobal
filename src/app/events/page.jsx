@@ -12,16 +12,16 @@ export const metadata = {
   title: "Events - Shabuj Global",
   description: "Explore all ongoing and upcoming events organized by Shabuj Global for students planning to study abroad.",
   keywords: "Shabuj Global, study abroad, events, student programs, workshops, seminars",
-  authors: [{ name: "Shabuj Global", url: "https://yourwebsite.com" }],
+  authors: [{ name: "Shabuj Global", url: "https://s-global.vercel.app/" }],
   robots: "index, follow",
   openGraph: {
     title: "Events - Shabuj Global",
     description: "Stay updated with all ongoing and upcoming events for students planning to study abroad.",
-    url: "https://yourwebsite.com/events",
+    url: "https://s-global.vercel.app/events",
     siteName: "Shabuj Global",
     images: [
       {
-        url: "https://yourwebsite.com/og-events.jpg",
+        url: "https://s-global.vercel.app/og-events.jpg",
         width: 1200,
         height: 630,
         alt: "Shabuj Global Events",
@@ -34,9 +34,9 @@ export const metadata = {
     card: "summary_large_image",
     title: "Events - Shabuj Global",
     description: "Stay updated with all ongoing and upcoming events for students planning to study abroad.",
-    site: "@YourTwitterHandle",
-    creator: "@YourTwitterHandle",
-    images: ["https://yourwebsite.com/og-events.jpg"],
+    site: "@ShabujTwitterHandle",
+    creator: "@ShabujTwitterHandle",
+    images: ["https://s-global.vercel.app/og-events.jpg"],
   },
 };
 

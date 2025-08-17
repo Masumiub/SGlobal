@@ -44,11 +44,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${event.title} - Shabuj Global`,
       description: event.description?.slice(0, 160) || "Shabuj Global event details",
-      url: `https://yourwebsite.com/events/${id}`,
+      url: `https://s-global.vercel.app/events/${id}`,
       siteName: "Shabuj Global",
       images: [
         {
-          url: event.bannerURL || "https://yourwebsite.com/default-og-image.jpg",
+          url: event.bannerURL || "https://s-global.vercel.app/default-og-image.jpg",
           width: 1200,
           height: 630,
           alt: event.title,
@@ -61,9 +61,9 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: `${event.title} - Shabuj Global`,
       description: event.description?.slice(0, 160) || "Shabuj Global event details",
-      images: [event.bannerURL || "https://yourwebsite.com/default-og-image.jpg"],
-      site: "@YourTwitterHandle",
-      creator: "@YourTwitterHandle",
+      images: [event.bannerURL || "hhttps://s-global.vercel.app/default-og-image.jpg"],
+      site: "@ShabujTwitterHandle",
+      creator: "@ShabujTwitterHandle",
     },
   };
 }
