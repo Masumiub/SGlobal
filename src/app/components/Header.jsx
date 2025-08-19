@@ -36,7 +36,7 @@ export default function Header() {
                 <div className='max-w-3xl mb-10 mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-5 items-center justify-center'>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl  text-blue-500 transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-t from-base-100 to-base-300'>
                             <div>
 
                                 <LiaUniversitySolid size={35} />
@@ -48,7 +48,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl  text-blue-500 transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-t from-base-100 to-base-300'>
                             <div>
                                 <LuNotebook size={35} />
                             </div>
@@ -59,7 +59,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-600'>
+                        <div className='bg-white p-4 flex shadow-2xl items-center gap-5 rounded-2xl text-blue-500 transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-t from-base-100 to-base-300'>
                             <div>
                                 <HiOutlineDesktopComputer size={35} />
                             </div>
@@ -73,7 +73,7 @@ export default function Header() {
 
                     </div>
                 </div>
-                <Link href='/register' className='btn bg-blue-500 text-white rounded-full border-0'>Join Now</Link>
+                <Link href='/register' className='btn bg-blue-500 text-white rounded-full border-0 btn-lg hover:bg-blue-700'>Join Now</Link>
                 </Fade>
             </div>
         </header>

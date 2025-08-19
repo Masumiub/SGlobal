@@ -30,7 +30,7 @@ export default function Features() {
 
         <div className="grid gap-8 md:grid-cols-3">
           {features.map((feature, idx) => (
-            <Fade key={idx} cascade triggerOnce>
+            <Fade key={idx} cascade>
               <div className="px-6 py-16 bg-gradient-to-b from-blue-600 to-sky-500  rounded-2xl shadow hover:shadow-lg transition flex flex-col  h-full min-h-[280px] text-white">
                 {feature.icon}
                 <h3 className="text-xl font-semibold mb-3 ">

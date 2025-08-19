@@ -50,7 +50,7 @@ export default async function PastEvents() {
       </div>
 
       <div className="text-center mt-15">
-        <Link href='/events' className="btn bg-blue-500 text-white btn-lg rounded-full">Show More</Link>
+        <Link href='/events' className="btn bg-sky-500 text-white btn-lg rounded-full hover:shadow-lg hover:bg-sky-600">Show More</Link>
       </div>
     </div>
   );
