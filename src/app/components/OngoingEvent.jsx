@@ -30,7 +30,16 @@ export default async function OngoingEvents() {
 
 
 
-  const ongoingEvents = safeEvents.filter(event => categorizeEvent(event, userTimeZone) === "ongoing");
+//  const ongoingEvents = safeEvents.filter(event => categorizeEvent(event, userTimeZone) === "ongoing");
+
+const ongoingEvents = safeEvents.filter(event => {
+  const now = new Date();
+
+  const start = event.startTime ? new Date(event.startTime) : null;
+  const end = event.endTime ? new Date(event.endTime) : null;
+
+  return start && end && now >= start && now <= end;
+});
 
   if (!ongoingEvents.length) return <NoEvents />;
 
