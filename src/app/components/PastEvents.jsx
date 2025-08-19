@@ -8,11 +8,13 @@ export const revalidate = 60;
 
 const EVENTS_PER_PAGE = 6;
 
-export default async function PastEvents({ searchParams }) {
+export default async function PastEvents() {
+  //const page = parseInt(searchParams?.page || "1", 10);
+
   const client = await clientPromise;
   const db = client.db("SGlobalDB");
 
-  const page = parseInt(searchParams?.page || "1", 10);
+
 
   const events = await db.collection("events").find({}).sort({ startTime: -1 }).toArray();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -22,12 +24,12 @@ export default async function PastEvents({ searchParams }) {
   if (!pastEvents.length) return <div className="text-center py-10 text-gray-500">No past events.</div>;
 
 
-  const totalEvents = pastEvents.length;
-  const totalPages = Math.ceil(totalEvents / EVENTS_PER_PAGE);
+  // const totalEvents = pastEvents.length;
+  // const totalPages = Math.ceil(totalEvents / EVENTS_PER_PAGE);
 
-  const startIdx = (page - 1) * EVENTS_PER_PAGE;
-  const endIdx = startIdx + EVENTS_PER_PAGE;
-  const currentEvents = pastEvents.slice(startIdx, endIdx);
+  // const startIdx = (page - 1) * EVENTS_PER_PAGE;
+  // const endIdx = startIdx + EVENTS_PER_PAGE;
+  // const currentEvents = pastEvents.slice(startIdx, endIdx);
 
 
   return (
@@ -41,14 +43,22 @@ export default async function PastEvents({ searchParams }) {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10">
 
-        {currentEvents.map(event => (
+        {pastEvents.slice(0,6).map(event => (
           <EventCard key={event._id.toString()} event={event} showViewDetailsButton={true} />
         ))}
 
       </div>
 
-<div className="flex mx-auto justify-center mt-10 gap-1">
-        {/* Prev Button */}
+      <div className="text-center mt-15">
+        <Link href='/events' className="btn bg-blue-500 text-white btn-lg rounded-full">Show More</Link>
+      </div>
+    </div>
+  );
+}
+
+
+{/* <div className="flex mx-auto justify-center mt-10 gap-1">
+
         <Link
           href={`?page=${page > 1 ? page - 1 : 1}`}
           className={`join-item btn ${page === 1 ? "btn-disabled" : ""}`}
@@ -56,7 +66,6 @@ export default async function PastEvents({ searchParams }) {
           Previous
         </Link>
 
-        {/* Page Numbers */}
         <div className="join">
           {Array.from({ length: totalPages }).map((_, idx) => {
             const pageNum = idx + 1;
@@ -72,15 +81,11 @@ export default async function PastEvents({ searchParams }) {
           })}
         </div>
 
-        {/* Next Button */}
+
         <Link
           href={`?page=${page < totalPages ? page + 1 : totalPages}`}
           className={`join-item btn ${page === totalPages ? "btn-disabled" : ""}`}
         >
           Next
         </Link>
-      </div>
-
-    </div>
-  );
-}
+      </div> */}
