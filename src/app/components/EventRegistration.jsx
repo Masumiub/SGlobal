@@ -49,16 +49,16 @@ export default function EventRegistration({ safeEvent }) {
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-6 items-center my-20">
+    <div className="grid md:grid-cols-1 gap-6 items-center my-20">
       {/* Left Side: Event Image */}
-      <div className="relative w-full h-72 md:h-96">
+      {/* <div className="relative w-full h-72 md:h-96">
         <Image
           src={ImgReg}
           alt="registration"
           fill
           className="object-cover rounded-2xl shadow-xl"
         />
-      </div>
+      </div> */}
 
       {/* Right Side: Registration Form */}
       <form
