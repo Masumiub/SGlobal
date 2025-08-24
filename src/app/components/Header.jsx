@@ -5,13 +5,19 @@ import { PiStudentFill } from "react-icons/pi";
 import { LuNotebook } from "react-icons/lu";
 import { LiaUniversitySolid } from "react-icons/lia";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
-import { Fade } from 'react-awesome-reveal';
+
 
 export default function Header() {
     return (
-        <header>
+        <header className="relative overflow-hidden">
+            <div className="absolute inset-0 -z-10 overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute top-1/2 -left-20 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-300 rounded-full opacity-15 blur-3xl"></div>
+            </div>
+
             <div className="w-full lg:max-w-4xl mx-auto px-6 py-20 text-center">
-                <Fade cascade>
+
                 <div className='w-full flex flex-col justify-center mx-auto items-center'>
 
                     <div className="bg-white text-black p-2 rounded-full shadow-lg  mb-8 flex flex-row items-center">
@@ -74,8 +80,16 @@ export default function Header() {
                     </div>
                 </div>
                 <Link href='/register' className='btn bg-blue-500 text-white rounded-full border-0 btn-lg hover:bg-blue-700'>Join Now</Link>
-                </Fade>
+
+
+                {/* Decorative elements */}
+                <div className="absolute left-5 top-20 w-15 h-15 rounded-full bg-blue-300 opacity-40 animate-bounce-slow"></div>
+                <div className="absolute right-10 top-1/3 w-10 h-10 rounded-full bg-sky-400 opacity-30 animate-bounce-slow" style={{animationDelay: '1s'}}></div>
+                <div className="absolute left-1/4 bottom-20 w-2 h-2 rounded-full bg-blue-500 opacity-20 animate-pulse"></div>
             </div>
         </header>
     )
 }
+
+
+
