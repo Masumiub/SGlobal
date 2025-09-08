@@ -87,8 +87,8 @@ export default function Features() {
     <section id="features" className="py-20 md:py-28 relative">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-sky-200 rounded-full opacity-15 blur-3xl"></div>
+        {/* <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-100 rounded-full opacity-20 blur-3xl"></div> */}
+        {/* <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-sky-200 rounded-full opacity-15 blur-3xl"></div> */}
       </div>
       
       <div className="max-w-7xl mx-auto px-6">
