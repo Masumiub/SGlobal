@@ -5,6 +5,7 @@ import { FaEarthAmericas } from 'react-icons/fa6';
 import { IoIosCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import Link from 'next/link';
 
 export default function Footer() {
     const pathname = usePathname();
@@ -47,23 +48,23 @@ export default function Footer() {
                 </aside>
                 <nav>
                     <h6 className="footer-title">General</h6>
-                    <a className="link link-hover">Home</a>
-                    <a className="link link-hover">Events</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Tests</a>
+                    <Link href='/' className="link link-hover">Home</Link>
+                    <Link href='/events' className="link link-hover">Events</Link>
+                    <Link href='/contact' className="link link-hover">Contact</Link>
+                    <Link href='/' className="link link-hover">Tests</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link href='/' className="link link-hover">About us</Link>
+                    <Link href='/contact' className="link link-hover">Contact</Link>
+                    <Link href='/' className="link link-hover">Jobs</Link>
+                    <Link href='/' className="link link-hover">Press kit</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <Link href='/' className="link link-hover">Terms of use</Link>
+                    <Link href='/' className="link link-hover">Privacy policy</Link>
+                    <Link href='/' className="link link-hover">Cookie policy</Link>
                 </nav>
             </footer>
 
