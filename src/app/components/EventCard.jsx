@@ -56,7 +56,7 @@ export default function EventCard({ event, showViewDetailsButton = true }) {
     date.toLocaleTimeString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
-      hour12: true, // 24-hour format
+      hour12: true,
     });
 
   return (
